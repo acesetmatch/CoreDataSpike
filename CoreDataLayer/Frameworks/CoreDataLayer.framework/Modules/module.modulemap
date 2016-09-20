@@ -1,0 +1,10 @@
+framework module CoreDataLayer {
+  umbrella header "CoreDataLayer.h"
+
+  export *
+  module * { export * }
+}
+
+module CoreDataLayer.Swift {
+    header "CoreDataLayer-Swift.h"
+}
