@@ -14,11 +14,8 @@ class CoreDataController: NSObject {
     var dataModel: String?
     var bundleIdentifier: String?
     var bundleName: String?
+    var entityName: String?
     
-    var _managedObjectModel: NSManagedObjectModel?
-    var _persistentStoreCoordinator: NSPersistentStoreCoordinator?
-    var _managedObjectContext: NSManagedObjectContext?
-
     // MARK: - Core Data stack
     
     lazy var applicationDocumentsDirectory: URL = {
@@ -29,9 +26,6 @@ class CoreDataController: NSObject {
     
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        if self._managedObjectModel != nil {
-            return self._managedObjectModel!
-        }
 
         let bundleName = self.bundleName!
         let bundle: Bundle? = self.bundleForResource(bundleName: bundleName)
@@ -43,20 +37,14 @@ class CoreDataController: NSObject {
             modelURL = self.modelPathForModel(dataModel: self.dataModel!)
         }
         
-        self._managedObjectModel = NSManagedObjectModel(contentsOf: modelURL! as URL)
-        
-        return self._managedObjectModel!
+        return NSManagedObjectModel(contentsOf: modelURL! as URL)!
     }()
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
-        if self._persistentStoreCoordinator != nil {
-            return self._persistentStoreCoordinator!
-        }
 
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        self._persistentStoreCoordinator = coordinator
         
         let url = self.applicationDocumentsDirectory.appendingPathComponent("\(self.dataModel).sqlite")
         var failureReason = "There was an error creating or loading the application's saved data."
@@ -76,22 +64,17 @@ class CoreDataController: NSObject {
             abort()
         }
         
-        return self._persistentStoreCoordinator!
+        return coordinator
     }()
     
     lazy var managedObjectContext: NSManagedObjectContext = {
         // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
-        if self._managedObjectContext != nil {
-            return self._managedObjectContext!
-        }
 
         let coordinator = self.persistentStoreCoordinator
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         
-        self._managedObjectContext = managedObjectContext
-        
-        return self._managedObjectContext!
+        return managedObjectContext
     }()
     
     // MARK: - Core Data Saving support
@@ -105,16 +88,17 @@ class CoreDataController: NSObject {
                 // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
                 NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-                abort()
+                //abort()
             }
         }
     }
 
     // MARK: - Utility methods
     
-    func fetchRequestForEntityName(entityName: String?, predicateFormat: String?, predicateValue: String?) -> NSFetchRequest<PatientTreatment>? {
+    func fetchRequestForEntityName(entityName: String?, predicateFormat: String?, predicateValue: Int?) -> NSFetchRequest<NSFetchRequestResult> {
         
-        let request: NSFetchRequest<PatientTreatment> = PatientTreatment.fetchRequest()
+        let request: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entityName!)
+        
         request.returnsObjectsAsFaults = false
         if predicateValue != nil {
             request.predicate = NSPredicate(format: predicateFormat!, predicateValue!)

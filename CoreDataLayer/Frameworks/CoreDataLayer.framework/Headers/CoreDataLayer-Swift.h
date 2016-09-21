@@ -124,6 +124,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) CoreDataLaye
 + (CoreDataLayer * _Nonnull)sharedInstance;
 - (void)savePatientTreatmentWithPatientTreatment:(NSDictionary<NSString *, id> * _Nonnull)patientTreatment;
 - (NSDictionary<NSString *, PatientTreatment *> * _Nullable)getPatientTreatments;
+- (PatientTreatment * _Nullable)getPatientTreatmentForIndedxWithIndex:(NSInteger)index;
+- (BOOL)updatePatientTreatmentWithPatientTreatment:(PatientTreatment * _Nonnull)patientTreatment;
+- (BOOL)drop;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -142,6 +145,7 @@ SWIFT_CLASS("_TtC13CoreDataLayer16PatientTreatment")
 @property (nonatomic) int32_t duration;
 @property (nonatomic) int32_t level;
 @property (nonatomic) double realLevel;
+@property (nonatomic) int32_t index;
 @end
 
 #pragma clang diagnostic pop

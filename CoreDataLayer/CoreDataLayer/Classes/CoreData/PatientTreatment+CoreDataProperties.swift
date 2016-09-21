@@ -2,7 +2,7 @@
 //  PatientTreatment+CoreDataProperties.swift
 //  
 //
-//  Created by Gene Backlin on 9/20/16.
+//  Created by Gene Backlin on 9/21/16.
 //
 //
 
@@ -12,13 +12,14 @@ import CoreData
 
 extension PatientTreatment {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<PatientTreatment> {
+    @nonobjc open class func fetchRequest() -> NSFetchRequest<PatientTreatment> {
         return NSFetchRequest<PatientTreatment>(entityName: "PatientTreatment");
     }
 
-    @NSManaged public var dateTime: NSDate?
-    @NSManaged public var duration: Int32
-    @NSManaged public var level: Int32
-    @NSManaged public var realLevel: Double
+    @NSManaged open var dateTime: NSDate?
+    @NSManaged open var duration: Int32
+    @NSManaged open var level: Int32
+    @NSManaged open var realLevel: Double
+    @NSManaged open var index: Int32
 
 }

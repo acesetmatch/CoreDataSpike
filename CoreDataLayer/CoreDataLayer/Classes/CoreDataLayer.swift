@@ -9,14 +9,26 @@
 import UIKit
 import CoreData
 
-public class CoreDataLayer: NSObject {
-    public static let sharedInstance = CoreDataLayer()
+open class CoreDataLayer: NSObject {
+    open static let sharedInstance = CoreDataLayer()
 
-    public func savePatientTreatment(patientTreatment: [String : AnyObject]) {
+    open func savePatientTreatment(patientTreatment: [String : AnyObject]) {
         PatientTreatmentCoreDataController.sharedInstance.savePatientTreatment(patientTreatment: patientTreatment)
     }
     
-    public func getPatientTreatments() -> [String : PatientTreatment]? {
+    open func getPatientTreatments() -> [String : PatientTreatment]? {
         return PatientTreatmentCoreDataController.sharedInstance.getPatientTreatments()
+    }
+    
+    open func getPatientTreatmentForIndedx(index: Int) -> PatientTreatment? {
+        return PatientTreatmentCoreDataController.sharedInstance.getPatientTreatmentForIndex(index: index)
+    }
+    
+    open func updatePatientTreatment(patientTreatment: PatientTreatment) -> Bool {
+        return PatientTreatmentCoreDataController.sharedInstance.updatePatientTreatment(patientTreatment: patientTreatment)
+    }
+
+    open func drop() -> Bool {
+        return PatientTreatmentCoreDataController.sharedInstance.drop()
     }
 }

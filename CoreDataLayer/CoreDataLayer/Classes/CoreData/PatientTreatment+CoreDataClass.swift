@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 
-public class PatientTreatment: NSManagedObject {
+open class PatientTreatment: NSManagedObject {
 
 }

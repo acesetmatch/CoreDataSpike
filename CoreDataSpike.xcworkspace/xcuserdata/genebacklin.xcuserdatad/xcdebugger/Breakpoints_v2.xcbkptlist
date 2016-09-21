@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestCoreDataLayer/TestCoreDataLayer/ViewController.swift"
-            timestampString = "496093039.188831"
+            timestampString = "496166138.287913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -25,29 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CoreDataLayer/CoreDataLayer/Classes/CoreData/PatientTreatmentCoreDataController.swift"
-            timestampString = "496094795.823412"
+            filePath = "TestCoreDataLayer/TestCoreDataLayer/ViewController.swift"
+            timestampString = "496168079.759358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "getPatientTreatments()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CoreDataLayer/CoreDataLayer/Classes/CoreData/CoreDataController.swift"
-            timestampString = "496093175.612297"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "fetchRequestForEntityName(entityName:predicateFormat:predicateValue:)"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
