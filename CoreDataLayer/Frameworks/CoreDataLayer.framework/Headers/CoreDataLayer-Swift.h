@@ -124,9 +124,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) CoreDataLaye
 + (CoreDataLayer * _Nonnull)sharedInstance;
 - (void)savePatientTreatmentWithPatientTreatment:(NSDictionary<NSString *, id> * _Nonnull)patientTreatment;
 - (NSDictionary<NSString *, PatientTreatment *> * _Nullable)getPatientTreatments;
-- (PatientTreatment * _Nullable)getPatientTreatmentForIndedxWithIndex:(NSInteger)index;
+- (PatientTreatment * _Nullable)getPatientTreatmentForIndexWithIndex:(NSInteger)index;
 - (BOOL)updatePatientTreatmentWithPatientTreatment:(PatientTreatment * _Nonnull)patientTreatment;
 - (BOOL)drop;
+- (NSInteger)count;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

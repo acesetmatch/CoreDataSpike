@@ -31,8 +31,12 @@ class PatientTreatmentCoreDataController: CoreDataController {
     // MARK: - Save
     
     func savePatientTreatment(patientTreatment: [String : AnyObject]) {
-        let index: Int = patientTreatment["index"] as! Int
-        let treatmentData: PatientTreatment? = self.getPatientTreatmentForIndex(index: index)
+        var index: Int? = patientTreatment["index"] as? Int
+        if index == nil {
+            index = self.count()
+        }
+        
+        let treatmentData: PatientTreatment? = self.getPatientTreatmentForIndex(index: index!)
         
         if treatmentData == nil {
             let dateTime: Date = patientTreatment["dateTime"] as! Date
@@ -56,8 +60,11 @@ class PatientTreatmentCoreDataController: CoreDataController {
     }
 
     func savePatientTreatmentWithModel(patientTreatment: PatientTreatment) {
-        let index = patientTreatment.index
-        
+        var index = patientTreatment.index
+        if index == nil {
+            index = Int32(self.count())
+        }
+
         if index < 1 {
             let context = self.managedObjectContext
             
@@ -74,6 +81,20 @@ class PatientTreatmentCoreDataController: CoreDataController {
         }
     }
 
+    func count() -> Int {
+        let context: NSManagedObjectContext = self.managedObjectContext
+        let request: NSFetchRequest<NSFetchRequestResult> = self.fetchRequestForEntityName(entityName: self.entityName, predicateFormat: nil, predicateValue: nil)
+        var count: Int?
+        
+        do {
+            try count = context.count(for: request)
+        } catch _ {
+            count = 0
+        }
+
+        return count!
+    }
+    
     // MARK: - Get
     
     func getPatientTreatments() -> [String : PatientTreatment]? {

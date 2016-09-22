@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         CoreDataLayer.sharedInstance.savePatientTreatment(patientTreatment: params)
         
         // Get a specific treatment by index
-        let patientTreatment: PatientTreatment? = CoreDataLayer.sharedInstance.getPatientTreatmentForIndedx(index: 0)
+        let patientTreatment: PatientTreatment? = CoreDataLayer.sharedInstance.getPatientTreatmentForIndex(index: 0)
         print("patientTreatment: \(patientTreatment!)")
 
         // Update a treatment

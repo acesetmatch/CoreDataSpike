@@ -20,7 +20,7 @@ open class CoreDataLayer: NSObject {
         return PatientTreatmentCoreDataController.sharedInstance.getPatientTreatments()
     }
     
-    open func getPatientTreatmentForIndedx(index: Int) -> PatientTreatment? {
+    open func getPatientTreatmentForIndex(index: Int) -> PatientTreatment? {
         return PatientTreatmentCoreDataController.sharedInstance.getPatientTreatmentForIndex(index: index)
     }
     
@@ -31,4 +31,9 @@ open class CoreDataLayer: NSObject {
     open func drop() -> Bool {
         return PatientTreatmentCoreDataController.sharedInstance.drop()
     }
+    
+    open func count() -> Int {
+        return PatientTreatmentCoreDataController.sharedInstance.count()
+    }
+    
 }
