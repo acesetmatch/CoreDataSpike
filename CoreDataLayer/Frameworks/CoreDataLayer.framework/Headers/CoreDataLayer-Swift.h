@@ -134,12 +134,28 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) CoreDataLaye
 @class NSEntityDescription;
 @class NSManagedObjectContext;
 
+SWIFT_CLASS_NAMED("DeviceInfo")
+@interface DeviceInfo : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSDate;
+
+@interface DeviceInfo (SWIFT_EXTENSION(CoreDataLayer))
+@property (nonatomic, strong) NSDate * _Nullable firstUse;
+@property (nonatomic, strong) NSDate * _Nullable lastSync;
+@property (nonatomic) float batteryCharge;
+@property (nonatomic) float tipLife;
+@property (nonatomic) float lifetimeUse;
+@property (nonatomic) float treatmentLife;
+@end
+
+
 SWIFT_CLASS("_TtC13CoreDataLayer16PatientTreatment")
 @interface PatientTreatment : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSDate;
 
 @interface PatientTreatment (SWIFT_EXTENSION(CoreDataLayer))
 @property (nonatomic, strong) NSDate * _Nullable dateTime;

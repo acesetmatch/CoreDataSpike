@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19688F821D95ADC0009B7FAE /* DeviceInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19688F801D95ADC0009B7FAE /* DeviceInfo+CoreDataClass.swift */; };
+		19688F831D95ADC0009B7FAE /* DeviceInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19688F811D95ADC0009B7FAE /* DeviceInfo+CoreDataProperties.swift */; };
+		19688F871D95AE70009B7FAE /* DeviceInfoCoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19688F861D95AE70009B7FAE /* DeviceInfoCoreDataViewController.swift */; };
 		4E190BBB1D91CAE400D38F43 /* PatientTreatment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E190BB91D91CAE400D38F43 /* PatientTreatment+CoreDataClass.swift */; };
 		4E190BBC1D91CAE400D38F43 /* PatientTreatment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E190BBA1D91CAE400D38F43 /* PatientTreatment+CoreDataProperties.swift */; };
 		4E1F27481D919CB10027E87E /* CoreDataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1F273E1D919CB10027E87E /* CoreDataLayer.framework */; };
@@ -30,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19688F801D95ADC0009B7FAE /* DeviceInfo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		19688F811D95ADC0009B7FAE /* DeviceInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		19688F861D95AE70009B7FAE /* DeviceInfoCoreDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoCoreDataViewController.swift; sourceTree = "<group>"; };
 		4E190BB91D91CAE400D38F43 /* PatientTreatment+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PatientTreatment+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4E190BBA1D91CAE400D38F43 /* PatientTreatment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PatientTreatment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4E1F273E1D919CB10027E87E /* CoreDataLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreDataLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,9 +122,12 @@
 			isa = PBXGroup;
 			children = (
 				4E1F27611D919D260027E87E /* CoreDataController.swift */,
+				4E1F276B1D919F490027E87E /* PatientTreatmentCoreDataController.swift */,
+				19688F861D95AE70009B7FAE /* DeviceInfoCoreDataViewController.swift */,
 				4E190BB91D91CAE400D38F43 /* PatientTreatment+CoreDataClass.swift */,
 				4E190BBA1D91CAE400D38F43 /* PatientTreatment+CoreDataProperties.swift */,
-				4E1F276B1D919F490027E87E /* PatientTreatmentCoreDataController.swift */,
+				19688F801D95ADC0009B7FAE /* DeviceInfo+CoreDataClass.swift */,
+				19688F811D95ADC0009B7FAE /* DeviceInfo+CoreDataProperties.swift */,
 				4E1F27681D919D8E0027E87E /* TearBudHistory.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -265,9 +274,12 @@
 			files = (
 				4E1F27641D919D260027E87E /* CoreDataLayer.swift in Sources */,
 				4E1F27631D919D260027E87E /* CoreDataController.swift in Sources */,
+				19688F871D95AE70009B7FAE /* DeviceInfoCoreDataViewController.swift in Sources */,
 				4E190BBC1D91CAE400D38F43 /* PatientTreatment+CoreDataProperties.swift in Sources */,
 				4E1F276A1D919D8E0027E87E /* TearBudHistory.xcdatamodeld in Sources */,
 				4E190BBB1D91CAE400D38F43 /* PatientTreatment+CoreDataClass.swift in Sources */,
+				19688F831D95ADC0009B7FAE /* DeviceInfo+CoreDataProperties.swift in Sources */,
+				19688F821D95ADC0009B7FAE /* DeviceInfo+CoreDataClass.swift in Sources */,
 				4E1F276C1D919F490027E87E /* PatientTreatmentCoreDataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

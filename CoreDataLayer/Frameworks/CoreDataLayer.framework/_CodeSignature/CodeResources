@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/CoreDataLayer-Swift.h</key>
 		<data>
-		VAAN9mgvU095wb+Nmt0cchV6Zm8=
+		GzPp5P9P5mZbzj4V3mMRtMABM34=
 		</data>
 		<key>Headers/CoreDataLayer.h</key>
 		<data>
@@ -14,15 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Nzw5gEHprhvflfTFbhBPQrH1tdw=
+		7OA7n4/2XrXuaaOjE+UAGbKK+YI=
 		</data>
-		<key>Modules/CoreDataLayer.swiftmodule/i386.swiftdoc</key>
+		<key>Modules/CoreDataLayer.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		cOhLG3w19/KMqAQfLk6r1JEEHzg=
+		hPBtQxJplb2u/y4xf3YB0KOQEzc=
 		</data>
-		<key>Modules/CoreDataLayer.swiftmodule/i386.swiftmodule</key>
+		<key>Modules/CoreDataLayer.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		Y6Xd9IBU8fRJ9pprAmnnzp6heYM=
+		GW9865nNgtD4a9kDyB4HPqv9AKs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>TearBudHistory.momd/TearBudHistory.mom</key>
 		<data>
-		E+xodQ9IFzBgkA1Z8Fov3p8nqUw=
+		/rd6otx0WAxErOUweNcMEXusgPc=
 		</data>
 		<key>TearBudHistory.momd/VersionInfo.plist</key>
 		<data>
-		BKNrhoqZw3+wm3m41JK/nzE/zvc=
+		Tv5X0d1pSemYvbzfzUFStGrxuho=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -43,11 +43,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VAAN9mgvU095wb+Nmt0cchV6Zm8=
+			GzPp5P9P5mZbzj4V3mMRtMABM34=
 			</data>
 			<key>hash2</key>
 			<data>
-			jA00Pl2cKjP6qO+/0/Y/xr/PdMdB+voKuYjPjFpruzs=
+			f+tzY41xuwOSjMomRte5h9smTnBEcgBvxQXTT/d9e18=
 			</data>
 		</dict>
 		<key>Headers/CoreDataLayer.h</key>
@@ -61,26 +61,26 @@
 			FYmO4cZdAXKfGVRJby8IsnQEtneUVDS072L9qPIHXhM=
 			</data>
 		</dict>
-		<key>Modules/CoreDataLayer.swiftmodule/i386.swiftdoc</key>
+		<key>Modules/CoreDataLayer.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cOhLG3w19/KMqAQfLk6r1JEEHzg=
+			hPBtQxJplb2u/y4xf3YB0KOQEzc=
 			</data>
 			<key>hash2</key>
 			<data>
-			o+maRLqJU2+ojC2M9yVN5a5BsQd6bGGfP3tRwF7f3XI=
+			LUm9R2lo11+WhXDBuHzGSwxUXBBa+aSGwYWK6+syp18=
 			</data>
 		</dict>
-		<key>Modules/CoreDataLayer.swiftmodule/i386.swiftmodule</key>
+		<key>Modules/CoreDataLayer.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Y6Xd9IBU8fRJ9pprAmnnzp6heYM=
+			GW9865nNgtD4a9kDyB4HPqv9AKs=
 			</data>
 			<key>hash2</key>
 			<data>
-			U9h3uathbfHMXE90PQJhhXZD3a6utiIzq11lcl4KdOk=
+			DI3V/oF8uoguHa7C/ozO22Kvy9b5phiAs63sAUZqs+Q=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -98,22 +98,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			E+xodQ9IFzBgkA1Z8Fov3p8nqUw=
+			/rd6otx0WAxErOUweNcMEXusgPc=
 			</data>
 			<key>hash2</key>
 			<data>
-			yxQwB4Iirmv8ZN30kgIqMtcr7S6orunDPDHrEwnjJqY=
+			vM+Nq6ofVSyt3wu9R9obOUV+SP7YnfrwKR1uyDBKxEA=
 			</data>
 		</dict>
 		<key>TearBudHistory.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BKNrhoqZw3+wm3m41JK/nzE/zvc=
+			Tv5X0d1pSemYvbzfzUFStGrxuho=
 			</data>
 			<key>hash2</key>
 			<data>
-			E649qJQxawrq9x3gbzd4mFlH1n2lZisdfMX2lpzzd5Y=
+			FP3kUd+mCcg/EK+ZBkwvSiNBaF5Nqvwr6kUgddsG+ys=
 			</data>
 		</dict>
 	</dict>
