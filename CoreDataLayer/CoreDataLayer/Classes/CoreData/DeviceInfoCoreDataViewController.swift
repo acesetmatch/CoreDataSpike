@@ -28,22 +28,20 @@ class DeviceInfoCoreDataViewController: CoreDataController {
     func saveDeviceInfo(deviceInfo: [String : AnyObject]) {
         let deviceData: [String : AnyObject]? = deviceInfo
         if deviceData != nil {
-            let batteryCharge: CGFloat = deviceInfo["batteryCharge"] as! CGFloat
-            let lifetimeUse: CGFloat = deviceInfo["lifetimeUse"] as! CGFloat
-            let tipLife: CGFloat = deviceInfo["tipLife"] as! CGFloat
-            let treatmentLife: CGFloat = deviceInfo["treatmentLife"] as! CGFloat
-            let firstUse: Date = deviceInfo["firstUse"] as! Date
-            let lastSync: Date = deviceInfo["lastSync"] as! Date
+            let timeBLEOn: Double = deviceInfo["timeBLEOn"] as! Double
+            let timeIdle: Double = deviceInfo["timeIdle"] as! Double
+            let timeOn: Double = deviceInfo["timeOn"] as! Double
+            let timeCharging: Double = deviceInfo["timeCharging"] as! Double
+            let dateLastTipChange: Date = deviceInfo["dateLastTipChange"] as! Date
             
             let context = self.managedObjectContext
             
             let deviceData: NSManagedObject = NSEntityDescription.insertNewObject(forEntityName: self.entityName!, into: context) as! NSManagedObject
-            deviceData.setValue(batteryCharge, forKey: "batteryCharge")
-            deviceData.setValue(lifetimeUse, forKey: "lifetimeUse")
-            deviceData.setValue(tipLife, forKey: "tipLife")
-            deviceData.setValue(treatmentLife, forKey: "treatmentLife")
-            deviceData.setValue(firstUse, forKey: "firstUse")
-            deviceData.setValue(lastSync, forKey: "lastSync")
+            deviceData.setValue(timeBLEOn, forKey: "timeBLEOn")
+            deviceData.setValue(timeIdle, forKey: "timeIdle")
+            deviceData.setValue(timeOn, forKey: "timeOn")
+            deviceData.setValue(timeCharging, forKey: "timeCharging")
+            deviceData.setValue(dateLastTipChange, forKey: "dateLastTipChange")
             
             self.saveContext()
         } else {
@@ -56,12 +54,11 @@ class DeviceInfoCoreDataViewController: CoreDataController {
             let context = self.managedObjectContext
 
             let deviceData: DeviceInfo = NSEntityDescription.insertNewObject(forEntityName: self.entityName!, into: context) as! DeviceInfo
-            deviceData.setValue(deviceData.batteryCharge, forKey: "batteryCharge")
-            deviceData.setValue(deviceData.lifetimeUse, forKey: "lifetimeUse")
-            deviceData.setValue(deviceData.tipLife, forKey: "tipLife")
-            deviceData.setValue(deviceData.treatmentLife, forKey: "treatmentLife")
-            deviceData.setValue(deviceData.firstUse, forKey: "firstUse")
-            deviceData.setValue(deviceData.lastSync, forKey: "lastSync")
+            deviceData.setValue(deviceData.timeBLEOn, forKey: "timeBLEOn")
+            deviceData.setValue(deviceData.timeIdle, forKey: "timeIdle")
+            deviceData.setValue(deviceData.timeOn, forKey: "timeOn")
+            deviceData.setValue(deviceData.timeCharging, forKey: "timeCharging")
+            deviceData.setValue(deviceData.dateLastTipChange, forKey: "dateLastTipChange")
             self.saveContext()
         }
     }
@@ -121,12 +118,11 @@ class DeviceInfoCoreDataViewController: CoreDataController {
             
             if (results?.count)! > 0 {
                 let localDeviceInfo: DeviceInfo = deviceInfo as! DeviceInfo
-                localDeviceInfo.batteryCharge = deviceInfo.batteryCharge
-                localDeviceInfo.lifetimeUse = deviceInfo.lifetimeUse
-                localDeviceInfo.tipLife = deviceInfo.tipLife
-                localDeviceInfo.treatmentLife = deviceInfo.treatmentLife
-                localDeviceInfo.firstUse = deviceInfo.firstUse
-                localDeviceInfo.lastSync = deviceInfo.lastSync
+                localDeviceInfo.timeBLEOn = deviceInfo.timeBLEOn
+                localDeviceInfo.timeIdle = deviceInfo.timeIdle
+                localDeviceInfo.timeOn = deviceInfo.timeOn
+                localDeviceInfo.timeCharging = deviceInfo.timeCharging
+                localDeviceInfo.dateLastTipChange = deviceInfo.dateLastTipChange
                 self.saveContext()
             }
         } catch let error as Error {

@@ -2,13 +2,14 @@
 //  DeviceInfo+CoreDataClass.swift
 //  CoreDataLayer
 //
-//  Created by Shawn on 9/23/16.
+//  Created by Shawn on 9/26/16.
 //  Copyright © 2016 Gene Backlin. All rights reserved.
 //
 
 import Foundation
 import CoreData
 
-open class DeviceInfo: NSManagedObject {
- 
+
+public class DeviceInfo: NSManagedObject {
+
 }

@@ -17,30 +17,26 @@ class DeviceInfoViewController: UIViewController {
     @IBOutlet weak var firstUse: UILabel!
     @IBOutlet weak var lastSync: UILabel!
     
-    var firstUseDate: Date?
-    var lastSyncDate: Date?
+    var dateLastTipChange: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.firstUseDate = Date()
-        self.lastSyncDate = Date()
+        self.dateLastTipChange = Date()
         var deviceInfo: [String : AnyObject] = [String : AnyObject]()
-        deviceInfo["batteryCharge"] = 30.0 as AnyObject
-        deviceInfo["tipLife"] = 20.0 as AnyObject?
-        deviceInfo["treatmentLife"] = 100.0 as AnyObject?
-        deviceInfo["lifetimeUse"] = 50.0 as AnyObject?
-        deviceInfo["firstUse"] =  firstUseDate as AnyObject?
-        deviceInfo["lastSync"] =  lastSyncDate as AnyObject?
+        deviceInfo["timeBLEOn"] = 30.0 as AnyObject
+        deviceInfo["timeCharging"] = 20.0 as AnyObject?
+        deviceInfo["timeIdle"] = 100.0 as AnyObject?
+        deviceInfo["timeOn"] = 50.0 as AnyObject?
+        deviceInfo["dateLastTipChange"] =  dateLastTipChange as AnyObject?
         CoreDataLayer.sharedInstance.saveDeviceInfo(deviceInfo: deviceInfo)
     
         //get Device Info
         let deviceData = CoreDataLayer.sharedInstance.getDeviceInfo()
-        self.batteryChargeLbl.text = "\(deviceData?.batteryCharge)"
-        self.tipLife.text = "\(deviceData?.tipLife)"
-        self.treatmentLife.text = "\(deviceData?.treatmentLife)"
-        self.lifetimeUse.text = "\(deviceData?.lifetimeUse)"
-        self.firstUse.text = "\(deviceData?.firstUse)"
-        self.lastSync.text = "\(deviceData?.lastSync)"
+        self.batteryChargeLbl.text = "\(deviceData?.timeBLEOn)"
+        self.tipLife.text = "\(deviceData?.timeCharging)"
+        self.treatmentLife.text = "\(deviceData?.timeIdle)"
+        self.lifetimeUse.text = "\(deviceData?.timeOn)"
+        self.firstUse.text = "\(deviceData?.dateLastTipChange)"
 
         
         // Do deviceInfo additional setup after loading the view.

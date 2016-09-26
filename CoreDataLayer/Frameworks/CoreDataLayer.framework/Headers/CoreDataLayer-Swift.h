@@ -146,12 +146,11 @@ SWIFT_CLASS("_TtC13CoreDataLayer10DeviceInfo")
 @class NSDate;
 
 @interface DeviceInfo (SWIFT_EXTENSION(CoreDataLayer))
-@property (nonatomic, strong) NSDate * _Nullable firstUse;
-@property (nonatomic, strong) NSDate * _Nullable lastSync;
-@property (nonatomic) float batteryCharge;
-@property (nonatomic) float tipLife;
-@property (nonatomic) float lifetimeUse;
-@property (nonatomic) float treatmentLife;
+@property (nonatomic) double timeCharging;
+@property (nonatomic, strong) NSDate * _Nullable dateLastTipChange;
+@property (nonatomic) double timeOn;
+@property (nonatomic) double timeBLEOn;
+@property (nonatomic) double timeIdle;
 @end
 
 

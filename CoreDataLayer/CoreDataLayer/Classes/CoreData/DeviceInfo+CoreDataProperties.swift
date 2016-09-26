@@ -2,7 +2,7 @@
 //  DeviceInfo+CoreDataProperties.swift
 //  CoreDataLayer
 //
-//  Created by Shawn on 9/23/16.
+//  Created by Shawn on 9/26/16.
 //  Copyright © 2016 Gene Backlin. All rights reserved.
 //
 
@@ -16,11 +16,10 @@ extension DeviceInfo {
         return NSFetchRequest<DeviceInfo>(entityName: "DeviceInfo");
     }
 
-    @NSManaged open var firstUse: NSDate?
-    @NSManaged open var lastSync: NSDate?
-    @NSManaged open var batteryCharge: Float
-    @NSManaged open var tipLife: Float
-    @NSManaged open var lifetimeUse: Float
-    @NSManaged open var treatmentLife: Float
+    @NSManaged public var timeCharging: Double
+    @NSManaged public var dateLastTipChange: NSDate?
+    @NSManaged public var timeOn: Double
+    @NSManaged public var timeBLEOn: Double
+    @NSManaged public var timeIdle: Double
 
 }
