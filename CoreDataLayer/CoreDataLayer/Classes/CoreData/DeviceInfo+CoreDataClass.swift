@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-@objc(DeviceInfo)
 open class DeviceInfo: NSManagedObject {
  
 }

@@ -16,11 +16,11 @@ extension DeviceInfo {
         return NSFetchRequest<DeviceInfo>(entityName: "DeviceInfo");
     }
 
-    @NSManaged public var firstUse: NSDate?
-    @NSManaged public var lastSync: NSDate?
-    @NSManaged public var batteryCharge: Float
-    @NSManaged public var tipLife: Float
-    @NSManaged public var lifetimeUse: Float
-    @NSManaged public var treatmentLife: Float
+    @NSManaged open var firstUse: NSDate?
+    @NSManaged open var lastSync: NSDate?
+    @NSManaged open var batteryCharge: Float
+    @NSManaged open var tipLife: Float
+    @NSManaged open var lifetimeUse: Float
+    @NSManaged open var treatmentLife: Float
 
 }

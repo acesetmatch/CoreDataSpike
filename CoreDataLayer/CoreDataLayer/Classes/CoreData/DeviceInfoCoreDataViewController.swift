@@ -85,20 +85,17 @@ class DeviceInfoCoreDataViewController: CoreDataController {
     func getDeviceInfo() -> DeviceInfo? {
         let context: NSManagedObjectContext = self.managedObjectContext
         let request: NSFetchRequest<NSFetchRequestResult> = self.fetchRequestForEntityName(entityName: self.entityName, predicateFormat: nil, predicateValue: nil)
-        var result: NSManagedObject?
+        var results: [NSManagedObject]?
         var deviceInfo: DeviceInfo?
         
         do {
-            try result = context.fetch(request) as! NSManagedObject
-            
-            if result != nil {
-                deviceInfo = result as! DeviceInfo?
-//                for treatment: NSManagedObject in results! {
-//                    let patientTreatment: PatientTreatment = treatment as! PatientTreatment
-//                    let key: String = String(describing: patientTreatment.index.description)
-//                    
-//                    patientTreatments![key] = (treatment as! AnyObject) as! PatientTreatment
-//                }
+            try results = context.fetch(request) as! [NSManagedObject]
+            if results != nil {
+                for deviceInfoResult: NSManagedObject in results! {
+                    let d: DeviceInfo = deviceInfoResult as! DeviceInfo
+                    deviceInfo = deviceInfoResult as! DeviceInfo
+                    break
+                }
             }
         } catch _ {
             deviceInfo = nil

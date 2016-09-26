@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/CoreDataLayer-Swift.h</key>
 		<data>
-		GzPp5P9P5mZbzj4V3mMRtMABM34=
+		F2KWWSjQ5gxkVjZ7bpEWBWzCoeM=
 		</data>
 		<key>Headers/CoreDataLayer.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/CoreDataLayer.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		GW9865nNgtD4a9kDyB4HPqv9AKs=
+		6zyurq2Vh5ZhCH+TNXBV0e0+ADA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -43,11 +43,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GzPp5P9P5mZbzj4V3mMRtMABM34=
+			F2KWWSjQ5gxkVjZ7bpEWBWzCoeM=
 			</data>
 			<key>hash2</key>
 			<data>
-			f+tzY41xuwOSjMomRte5h9smTnBEcgBvxQXTT/d9e18=
+			CTrfVxJ8w8A0IvVaJ0PZMWRxmxq67/VDrY3ZorSpRcQ=
 			</data>
 		</dict>
 		<key>Headers/CoreDataLayer.h</key>
@@ -76,11 +76,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GW9865nNgtD4a9kDyB4HPqv9AKs=
+			6zyurq2Vh5ZhCH+TNXBV0e0+ADA=
 			</data>
 			<key>hash2</key>
 			<data>
-			DI3V/oF8uoguHa7C/ozO22Kvy9b5phiAs63sAUZqs+Q=
+			ar3xMkPWxHwJZNO5X8rlgRx7INdaMhguyqSQXlKkHNc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

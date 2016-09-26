@@ -117,6 +117,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
 @class PatientTreatment;
+@class DeviceInfo;
 
 SWIFT_CLASS("_TtC13CoreDataLayer13CoreDataLayer")
 @interface CoreDataLayer : NSObject
@@ -128,13 +129,16 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) CoreDataLaye
 - (BOOL)updatePatientTreatmentWithPatientTreatment:(PatientTreatment * _Nonnull)patientTreatment;
 - (BOOL)drop;
 - (NSInteger)count;
+- (void)saveDeviceInfoWithDeviceInfo:(NSDictionary<NSString *, id> * _Nonnull)deviceInfo;
+- (BOOL)updateDeviceInfoWithDeviceInfo:(DeviceInfo * _Nonnull)deviceInfo;
+- (DeviceInfo * _Nullable)getDeviceInfo;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class NSEntityDescription;
 @class NSManagedObjectContext;
 
-SWIFT_CLASS_NAMED("DeviceInfo")
+SWIFT_CLASS("_TtC13CoreDataLayer10DeviceInfo")
 @interface DeviceInfo : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end

@@ -36,4 +36,18 @@ open class CoreDataLayer: NSObject {
         return PatientTreatmentCoreDataController.sharedInstance.count()
     }
     
+    open func saveDeviceInfo(deviceInfo: [String: AnyObject]) {
+        return DeviceInfoCoreDataViewController.sharedInstance.saveDeviceInfo(deviceInfo: deviceInfo)
+    }
+    
+    open func updateDeviceInfo(deviceInfo: DeviceInfo) -> Bool {
+        return DeviceInfoCoreDataViewController.sharedInstance.updateDeviceInfo(deviceInfo: deviceInfo)
+    }
+    
+    open func getDeviceInfo() -> DeviceInfo? {
+        return DeviceInfoCoreDataViewController.sharedInstance.getDeviceInfo()!
+    }
+    
+    
+    
 }

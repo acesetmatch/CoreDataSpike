@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		198253F31D95BF67009710CF /* DeviceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198253F21D95BF67009710CF /* DeviceInfoViewController.swift */; };
 		4E51CFBB1D91B065002B4261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51CFBA1D91B065002B4261 /* AppDelegate.swift */; };
 		4E51CFC01D91B065002B4261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E51CFBE1D91B065002B4261 /* Main.storyboard */; };
 		4E51CFC21D91B065002B4261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E51CFC11D91B065002B4261 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		198253F21D95BF67009710CF /* DeviceInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoViewController.swift; sourceTree = "<group>"; };
 		4E51CFB71D91B065002B4261 /* TestCoreDataLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCoreDataLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E51CFBA1D91B065002B4261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E51CFBF1D91B065002B4261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				4EEA53561D930F5900F46C56 /* ViewController.swift */,
 				4EF108581D931D7600EC6DAC /* AddTreatmentViewController.swift */,
 				4EEA53581D930F9800F46C56 /* MasterTableViewController.swift */,
+				198253F21D95BF67009710CF /* DeviceInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			files = (
 				4EEA53571D930F5900F46C56 /* ViewController.swift in Sources */,
 				4EEA53591D930F9800F46C56 /* MasterTableViewController.swift in Sources */,
+				198253F31D95BF67009710CF /* DeviceInfoViewController.swift in Sources */,
 				4E51CFBB1D91B065002B4261 /* AppDelegate.swift in Sources */,
 				4EF108591D931D7600EC6DAC /* AddTreatmentViewController.swift in Sources */,
 				4EEA535C1D9310F800F46C56 /* TreatmentHistoryTableViewCell.swift in Sources */,
