@@ -13,6 +13,7 @@ class AddTreatmentViewController: UIViewController {
     @IBOutlet weak var levelTextField: UITextField!
     @IBOutlet weak var realLevelTextField: UITextField!
     @IBOutlet weak var durationTextField: UITextField!
+    @IBOutlet weak var dateTextField: UITextField!
     
     var delegate: MasterTableViewController?
     var dateTime: Date?
@@ -26,8 +27,8 @@ class AddTreatmentViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.dateTime = Date()
-        self.dateTimeLabel.text = self.dataDateTime(self.dateTime)
+//        self.dateTime = Date()
+//        self.dateTimeLabel.text = self.dataDateTime(self.dateTime)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +46,31 @@ class AddTreatmentViewController: UIViewController {
         _ = self.navigationController?.popViewController(animated: true)
         self.delegate!.save(sender: treatments)
     }
+    
+    @IBAction func textFieldEditing(_ sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        
+        datePickerView.datePickerMode = UIDatePickerMode.date
+        
+        sender.inputView = datePickerView
+        
+        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), for: UIControlEvents.valueChanged)
+    }
+    
+    func datePickerValueChanged(sender:UIDatePicker) {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        
+        dateTime = sender.date
+        
+        dateTextField.text = dateFormatter.string(from: sender.date)
+        
+    }
+    
 
     /*
     // MARK: - Navigation

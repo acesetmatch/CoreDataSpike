@@ -8,9 +8,10 @@
 
 import UIKit
 import CoreDataLayer
+import CoreData
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -44,6 +45,12 @@ class ViewController: UIViewController {
         results = CoreDataLayer.sharedInstance.getPatientTreatments()
         print("results: \(results)")
         
+        //Date range test
+        let currentDate: NSDate = NSDate()
+        let daysToAdd = -14
+        let calculatedDate = NSCalendar.current.date(byAdding: Calendar.Component.day, value: daysToAdd, to: currentDate as Date)
+        let patientTreatments: [PatientTreatment]?  = CoreDataLayer.sharedInstance.getPatientTreatmentsForDateRange(startDate: currentDate as Date, endDate: calculatedDate!)
+        print("The patient treatments are: \(patientTreatments)")
         
         
     }

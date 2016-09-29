@@ -111,6 +111,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import ObjectiveC;
+@import Foundation;
 @import CoreData;
 #endif
 
@@ -126,9 +127,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) CoreDataLaye
 - (void)savePatientTreatmentWithPatientTreatment:(NSDictionary<NSString *, id> * _Nonnull)patientTreatment;
 - (NSDictionary<NSString *, PatientTreatment *> * _Nullable)getPatientTreatments;
 - (PatientTreatment * _Nullable)getPatientTreatmentForIndexWithIndex:(NSInteger)index;
+- (NSArray<PatientTreatment *> * _Nullable)getPatientTreatmentsForDateRangeWithStartDate:(NSDate * _Nonnull)startDate endDate:(NSDate * _Nonnull)endDate;
 - (BOOL)updatePatientTreatmentWithPatientTreatment:(PatientTreatment * _Nonnull)patientTreatment;
 - (BOOL)drop;
 - (NSInteger)count;
+- (NSInteger)deviceInfoCount;
 - (void)saveDeviceInfoWithDeviceInfo:(NSDictionary<NSString *, id> * _Nonnull)deviceInfo;
 - (BOOL)updateDeviceInfoWithDeviceInfo:(DeviceInfo * _Nonnull)deviceInfo;
 - (DeviceInfo * _Nullable)getDeviceInfo;
@@ -143,14 +146,19 @@ SWIFT_CLASS("_TtC13CoreDataLayer10DeviceInfo")
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSDate;
 
 @interface DeviceInfo (SWIFT_EXTENSION(CoreDataLayer))
 @property (nonatomic) double timeCharging;
-@property (nonatomic, strong) NSDate * _Nullable dateLastTipChange;
+@property (nonatomic, copy) NSDate * _Nullable dateLastTipChange;
 @property (nonatomic) double timeOn;
 @property (nonatomic) double timeBLEOn;
 @property (nonatomic) double timeIdle;
+@property (nonatomic, copy) NSDate * _Nonnull firstUse;
+@property (nonatomic, copy) NSDate * _Nonnull lastSync;
+@property (nonatomic) double batteryCharge;
+@property (nonatomic) double tipLife;
+@property (nonatomic) double treatmentLife;
+@property (nonatomic) double lifetimeUse;
 @end
 
 
@@ -159,6 +167,7 @@ SWIFT_CLASS("_TtC13CoreDataLayer16PatientTreatment")
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSDate;
 
 @interface PatientTreatment (SWIFT_EXTENSION(CoreDataLayer))
 @property (nonatomic, strong) NSDate * _Nullable dateTime;

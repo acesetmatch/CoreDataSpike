@@ -17,6 +17,12 @@ class MasterTableViewController: UITableViewController {
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         self.navigationItem.rightBarButtonItem = addButton
+        //Date range test
+        let currentDate: NSDate = NSDate()
+        let daysToAdd = -14
+        let calculatedDate = NSCalendar.current.date(byAdding: Calendar.Component.day, value: daysToAdd, to: currentDate as Date)
+        let patientTreatments: [PatientTreatment]?  = CoreDataLayer.sharedInstance.getPatientTreatmentsForDateRange(startDate: calculatedDate! as Date, endDate: currentDate as Date)
+        print("The patient treatments are: \(patientTreatments)")
     }
     
     override func viewWillAppear(_ animated: Bool) {

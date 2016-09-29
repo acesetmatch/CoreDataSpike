@@ -24,6 +24,10 @@ open class CoreDataLayer: NSObject {
         return PatientTreatmentCoreDataController.sharedInstance.getPatientTreatmentForIndex(index: index)
     }
     
+    open func getPatientTreatmentsForDateRange(startDate: Date, endDate: Date) -> [PatientTreatment]? {
+        return PatientTreatmentCoreDataController.sharedInstance.getPatientTreatmentsForDateRange(startDate: startDate as Date, endDate: endDate as Date)
+    }
+    
     open func updatePatientTreatment(patientTreatment: PatientTreatment) -> Bool {
         return PatientTreatmentCoreDataController.sharedInstance.updatePatientTreatment(patientTreatment: patientTreatment)
     }
@@ -34,6 +38,10 @@ open class CoreDataLayer: NSObject {
     
     open func count() -> Int {
         return PatientTreatmentCoreDataController.sharedInstance.count()
+    }
+    
+    open func deviceInfoCount() -> Int {
+        return DeviceInfoCoreDataViewController.sharedInstance.count()
     }
     
     open func saveDeviceInfo(deviceInfo: [String: AnyObject]) {
@@ -47,6 +55,8 @@ open class CoreDataLayer: NSObject {
     open func getDeviceInfo() -> DeviceInfo? {
         return DeviceInfoCoreDataViewController.sharedInstance.getDeviceInfo()!
     }
+    
+    
     
     
     

@@ -131,6 +131,8 @@ class PatientTreatmentCoreDataController: CoreDataController {
     func getPatientTreatmentsForIndex(index: Int, format: String) -> [String : PatientTreatment]? {
         let context: NSManagedObjectContext = self.managedObjectContext
         let request: NSFetchRequest<NSFetchRequestResult> = self.fetchRequestForEntityName(entityName: self.entityName, predicateFormat: format, predicateValue: index)
+//        let sortDescriptor = NSSortDescriptor(key: "dateTime", ascending: false)
+//        request.sortDescriptors = [sortDescriptor]
         
         var results: [NSManagedObject]?
         var patientTreatments: [String : PatientTreatment]?
@@ -152,12 +154,68 @@ class PatientTreatmentCoreDataController: CoreDataController {
             patientTreatments = nil
         }
         
+        let keys: [String] = Array(patientTreatments!.keys)
+        
         return patientTreatments
     }
     
+    func getPatientTreatmentsForDateRange(startDate: Date, endDate: Date) -> [PatientTreatment]? {
+        let context: NSManagedObjectContext = self.managedObjectContext
+        let request: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: self.entityName!)
+        //        self.fetchRequestForEntityName(entityName: self.entityName, predicateFormat: "startDate <= %@ AND endDate >= %@", predicateValue: startDate)
+        request.returnsObjectsAsFaults = false
+        request.predicate = NSPredicate(format: "(dateTime >= %@) AND (dateTime <= %@)", startDate as CVarArg, endDate as CVarArg)
+        var results: [NSManagedObject]?
+        var patientTreatments: [PatientTreatment] = [PatientTreatment]()
+        
+        do {
+            try results = context.fetch(request) as! [NSManagedObject]
+            
+            if (results?.count)! > 0 {
+//                patientTreatments = [String : PatientTreatment]()
+                
+                for treatment: NSManagedObject in results! {
+                    let patientTreatment: PatientTreatment = treatment as! PatientTreatment
+                    patientTreatments.append(patientTreatment)
+//                    let key: String = String(describing: patientTreatment.index.description)
+                    
+//                    patientTreatments![key] = (treatment as! AnyObject) as! PatientTreatment
+                }
+            }
+        } catch _ {
+            print("patient treatments is nil")
+        }
+        
+        return patientTreatments
+    }
+    
+//    func parseTreatments(_ treatmentHistory: [String : PatientTreatment]?) -> [String : PatientTreatment]? {
+//        var tempTreatmentHistory: [String : PatientTreatment]?
+//        
+//        if treatmentHistory != nil {
+//            tempTreatmentHistory = [String : PatientTreatment]()
+//            
+//            let keys: [String] = Array(treatmentHistory!.keys)
+//            let sortedKeys = keys.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedDescending }
+//            var treatmentDict: [String : PatientTreatmentData] = [String : PatientTreatmentData]()
+//            // For each key (year)
+//            for key in sortedKeys {
+//                // get the treatment array
+//                if let data: [PatientTreatment] = treatmentHistory![key] {
+//                    // get the treatment time and use it as a key to a temporaty dictionary (MMMddhhmm)
+//                    tempTreatmentHistory![key] = (data.reversed())
+//                }
+//                // refresh for the next key (year)
+//                treatmentDict.removeAll()
+//            }
+//        }
+//        
+//        return tempTreatmentHistory
+//    }
+    
     func getPatientTreatmentForIndex(index: Int, format: String) -> PatientTreatment? {
         let context: NSManagedObjectContext = self.managedObjectContext
-        let request: NSFetchRequest<NSFetchRequestResult> = self.fetchRequestForEntityName(entityName: self.entityName, predicateFormat: format, predicateValue: index)
+        let request: NSFetchRequest<NSFetchRequestResult> = self.fetchRequestForEntityName(entityName: self.entityName, predicateFormat: format, predicateValue: self.count() - index - 1)
         
         var results: [NSManagedObject]?
         var patientTreatment: PatientTreatment?

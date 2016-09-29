@@ -21,23 +21,28 @@ class DeviceInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dateLastTipChange = Date()
-        var deviceInfo: [String : AnyObject] = [String : AnyObject]()
-        deviceInfo["timeBLEOn"] = 30.0 as AnyObject
-        deviceInfo["timeCharging"] = 20.0 as AnyObject?
-        deviceInfo["timeIdle"] = 100.0 as AnyObject?
-        deviceInfo["timeOn"] = 50.0 as AnyObject?
-        deviceInfo["dateLastTipChange"] =  dateLastTipChange as AnyObject?
-        CoreDataLayer.sharedInstance.saveDeviceInfo(deviceInfo: deviceInfo)
-    
-        //get Device Info
+        if CoreDataLayer.sharedInstance.count() > 0 {
         let deviceData = CoreDataLayer.sharedInstance.getDeviceInfo()
-        self.batteryChargeLbl.text = "\(deviceData?.timeBLEOn)"
-        self.tipLife.text = "\(deviceData?.timeCharging)"
-        self.treatmentLife.text = "\(deviceData?.timeIdle)"
-        self.lifetimeUse.text = "\(deviceData?.timeOn)"
-        self.firstUse.text = "\(deviceData?.dateLastTipChange)"
-
+            self.batteryChargeLbl.text = "\(deviceData?.timeBLEOn)"
+            self.tipLife.text = "\(deviceData?.timeCharging)"
+            self.treatmentLife.text = "\(deviceData?.timeIdle)"
+            self.lifetimeUse.text = "\(deviceData?.timeOn)"
+            self.firstUse.text = "\(deviceData?.dateLastTipChange)"
+            print("There is data")
+        } else {
+            self.dateLastTipChange = Date()
+            var deviceInfo: [String : AnyObject] = [String : AnyObject]()
+            deviceInfo["timeBLEOn"] = 30.0 as AnyObject
+            deviceInfo["timeCharging"] = 20.0 as AnyObject?
+            deviceInfo["timeIdle"] = 100.0 as AnyObject?
+            deviceInfo["timeOn"] = 50.0 as AnyObject?
+            deviceInfo["dateLastTipChange"] =  dateLastTipChange as AnyObject?
+            CoreDataLayer.sharedInstance.saveDeviceInfo(deviceInfo: deviceInfo)
+            
+        }
+        //get Device Info
+//        let deviceData = CoreDataLayer.sharedInstance.getDeviceInfo()
+        
         
         // Do deviceInfo additional setup after loading the view.
     }
